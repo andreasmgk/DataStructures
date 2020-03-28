@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="BinaryTree.cpp" />
 		<Unit filename="BinaryTree.h" />
+		<Unit filename="BinaryTree2.cpp" />
+		<Unit filename="BinaryTree2.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
