@@ -15,14 +15,24 @@ class BinaryTree
 {
     private:
         node *root;
-        void print(node *);
+        void preorder(node *);
+        void inorder(node *);
+        void postorder(node *);
     public:
         BinaryTree();
         ~BinaryTree();
 
+        node *search(int);
         void insert(int);
-        void print(){
-            print(root);
+        void deletek(int);
+        void preorder(){
+            preorder(root);
+        }
+        void inorder(){
+            inorder(root);
+        }
+        void postorder(){
+            postorder(root);
         }
 
     protected:
