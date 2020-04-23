@@ -1,10 +1,10 @@
 #include <iostream>
 #include "BinaryTree.h"
+#include "BinaryTree2.h"
 
 using namespace std;
 
-int main()
-{
+int main(){
     BinaryTree b;
 
     b.insert(5);
@@ -26,6 +26,13 @@ int main()
     cout<<endl;
     b.deletek(15);
     b.inorder();
+
+    BinaryTree2 a;
+
+    a.root = a.insert(a.root, 8);
+    a.root = a.insert(a.root, 9);
+    a.root = a.insert(a.root, 10);
+    a.preorder();
 
     return 0;
 }
