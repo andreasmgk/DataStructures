@@ -8,6 +8,7 @@ struct avl{
     int d;
     avl *left;
     avl *right;
+    avl *parent;
 };
 
 class BinaryTree2
@@ -32,6 +33,7 @@ class BinaryTree2
 
         avl *insert(avl *, int);
         avl *search(int);
+        avl *deletek(avl *, int);
         void preorder(){
             preorder(root);
         }

@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    BinaryTree b;
+    /*BinaryTree b;
 
     b.insert(5);
     b.insert(6);
@@ -26,13 +26,28 @@ int main(){
     cout<<endl;
     b.deletek(15);
     b.inorder();
+    cout<<endl;*/
+
 
     BinaryTree2 a;
 
     a.root = a.insert(a.root, 8);
     a.root = a.insert(a.root, 9);
     a.root = a.insert(a.root, 10);
+    a.root = a.insert(a.root, 12);
+    a.root = a.insert(a.root, 11);
     a.preorder();
+    cout<<endl;
+    a.inorder();
+    a.root = a.deletek(a.root, 8);
+    a.root = a.deletek(a.root, 12);
+    cout<<endl;
+    a.preorder();
+    cout<<endl;
+    a.inorder();
+    cout<<endl;
+    a.postorder();
+    cout<<endl;
 
     return 0;
 }

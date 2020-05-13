@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1587678694 source:c:\users\andre\codeblocksprojects\datastructures\binarytree2.cpp
+1589403050 source:c:\users\andre\codeblocksprojects\datastructures\binarytree2.cpp
 	"BinaryTree2.h"
 	<iostream>
 	<cmath>
 
-1587678895 c:\users\andre\codeblocksprojects\datastructures\binarytree2.h
+1588780894 c:\users\andre\codeblocksprojects\datastructures\binarytree2.h
 	<iostream>
 
-1587678957 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
+1589403491 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
 	<iostream>
 	"BinaryTree.h"
 	"BinaryTree2.h"

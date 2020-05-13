@@ -31,7 +31,7 @@ int BinaryTree2::difference(avl *t){
     return b_factor;
 }
 
-avl *BinaryTree2::rr_rotat(avl *parent){
+avl *BinaryTree2::ll_rotat(avl *parent){
     avl *t;
     t = parent->right;
     parent->right = t->left;
@@ -39,7 +39,7 @@ avl *BinaryTree2::rr_rotat(avl *parent){
     return t;
 }
 
-avl *BinaryTree2::ll_rotat(avl *parent){
+avl *BinaryTree2::rr_rotat(avl *parent){
     avl *t;
     t = parent->left;
     parent->left = t->right;
@@ -47,32 +47,32 @@ avl *BinaryTree2::ll_rotat(avl *parent){
     return t;
 }
 
-avl *BinaryTree2::lr_rotat(avl *parent){
-    avl *t;
-    t = parent->left;
-    parent->left = rr_rotat(t);
-    return ll_rotat(parent);
-}
-
 avl *BinaryTree2::rl_rotat(avl *parent){
     avl *t;
-    t = parent->right;
-    parent->right = ll_rotat(t);
+    t = parent->left;
+    parent->left = ll_rotat(t);
     return rr_rotat(parent);
+}
+
+avl *BinaryTree2::lr_rotat(avl *parent){
+    avl *t;
+    t = parent->right;
+    parent->right = rr_rotat(t);
+    return ll_rotat(parent);
 }
 
 avl *BinaryTree2::balance(avl *t){
     int bal_factor = difference(t);
     if(bal_factor > 1){
         if(difference(t->left) > 0)
-            t = ll_rotat(t);
+            t = rr_rotat(t);
         else
-            t = lr_rotat(t);
+            t = rl_rotat(t);
     }else if(bal_factor < -1){
         if(difference(t->right) > 0)
-            t = rl_rotat(t);
+            t = lr_rotat(t);
         else
-            t = rr_rotat(t);
+            t = ll_rotat(t);
     }
     return t;
 }
@@ -83,6 +83,7 @@ avl *BinaryTree2::insert(avl *r, int v){
         r->d = v;
         r->left = nullptr;
         r->right = nullptr;
+        r->parent = nullptr;
         return r;
     }else if(v < r->d){
         r->left = insert(r->left, v);
@@ -108,6 +109,40 @@ avl *BinaryTree2::search(int k){
             break;
     }
     return leaf;
+}
+
+avl *BinaryTree2::deletek(avl *r, int k){
+    if(r == nullptr)
+        return r;
+    if(k < r->d)
+        r->left = deletek(r->left, k);
+    else if(k > r->d)
+        r->right = deletek(r->right, k);
+    else{
+        if(r->left == nullptr || r->right == nullptr){
+            avl *temp = r->left?r->left:r->right;
+
+            if(temp == nullptr){
+                temp = r;
+                r = nullptr;
+            }else
+                *r = *temp;
+            delete temp;
+        }else{
+            avl *current = r->right;
+            while(current->left != nullptr)
+                current = current->left;
+            avl *temp = current;
+            r->d = temp->d;
+            r->right = deletek(r->right, temp->d);
+        }
+    }
+    if(r == nullptr)
+        return r;
+
+    r = balance(r);
+
+    return r;
 }
 
 void BinaryTree2::preorder(avl *leaf){
