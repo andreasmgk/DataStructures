@@ -1,6 +1,5 @@
-#ifndef BINARYTREE_H
-#define BINARYTREE_H
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -8,7 +7,7 @@ struct node{
     node *parent = nullptr;
     node *left = nullptr;
     node *right = nullptr;
-    int value;
+    string value;
 };
 
 class BinaryTree
@@ -22,9 +21,9 @@ class BinaryTree
         BinaryTree();
         ~BinaryTree();
 
-        node *search(int);
-        void insert(int);
-        void deletek(int);
+        node *search(string);
+        void insert(string);
+        void deletek(string);
         void preorder(){
             preorder(root);
         }
@@ -34,8 +33,4 @@ class BinaryTree
         void postorder(){
             postorder(root);
         }
-
-    protected:
 };
-
-#endif // BINARYTREE_H

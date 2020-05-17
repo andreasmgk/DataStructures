@@ -11,13 +11,13 @@ BinaryTree::~BinaryTree()
     //dtor
 }
 
-node *BinaryTree::search(int k){
+node *BinaryTree::search(string k){
     node *leaf = new node;
     leaf = root;
     while(leaf){
-        if(leaf->value < k)
+        if(leaf->value.compare(k) < 0)
             leaf = leaf->right;
-        else if(leaf->value > k)
+        else if(leaf->value.compare(k) > 0)
             leaf = leaf->left;
         else
             break;
@@ -25,7 +25,7 @@ node *BinaryTree::search(int k){
     return leaf;
 }
 
-void BinaryTree::insert(int k){
+void BinaryTree::insert(string k){
     node *leaf = new node;
     leaf->value = k;
     if(root == nullptr){
@@ -34,7 +34,7 @@ void BinaryTree::insert(int k){
         node* leaf2 = root;
         while(leaf2 != nullptr){
             //left leaf
-            if(leaf->value<leaf2->value){
+            if(leaf->value.compare(leaf2->value) < 0){
                 if(leaf2->left == nullptr){
                     leaf2->left = leaf;
                     leaf->parent = leaf2;
@@ -42,7 +42,7 @@ void BinaryTree::insert(int k){
                 }
                 leaf2 = leaf2->left;
             //right leaf
-            }else if(leaf->value>leaf2->value){
+            }else if(leaf->value.compare(leaf2->value) > 0){
                 if(leaf2->right == nullptr){
                     leaf2->right = leaf;
                     leaf->parent = leaf2;
@@ -57,7 +57,7 @@ void BinaryTree::insert(int k){
     }
 }
 
-void BinaryTree::deletek(int k){
+void BinaryTree::deletek(string k){
     node *leaf = new node;
     leaf = search(k);
     if(leaf == nullptr)
@@ -95,7 +95,7 @@ void BinaryTree::preorder(node *leaf){
     if(leaf == nullptr){
         return;
     }
-    printf("%d \n", leaf->value);
+    printf("%s \n", leaf->value.c_str());
     preorder(leaf->left);
     preorder(leaf->right);
 }
@@ -105,7 +105,7 @@ void BinaryTree::inorder(node *leaf){
             return;
      }
      inorder(leaf->left);
-     printf("%d \n", leaf->value);
+     printf("%s \n", leaf->value.c_str());
      inorder(leaf->right);
 }
 
@@ -115,5 +115,5 @@ void BinaryTree::postorder(node *leaf){
     }
     postorder(leaf->left);
     postorder(leaf->right);
-    printf("%d \n", leaf->value);
+    printf("%s \n", leaf->value.c_str());
 }
