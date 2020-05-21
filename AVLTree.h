@@ -1,34 +1,28 @@
 #include <iostream>
 #include <string>
+#include "node.cpp"
 
 using namespace std;
-
-struct avl{
-    string d;
-    avl *left;
-    avl *right;
-    avl *parent;
-};
 
 class AVLTree
 {
     private:
-        avl *root;
+        node *root;
 
-        int height(avl *);
-        int difference(avl *);
-        avl *rr_rotat(avl *);
-        avl *ll_rotat(avl *);
-        avl *lr_rotat(avl *);
-        avl *rl_rotat(avl *);
-        avl *balance(avl *);
+        int height(node *);
+        int difference(node *);
+        node *rr_rotat(node *);
+        node *ll_rotat(node *);
+        node *lr_rotat(node *);
+        node *rl_rotat(node *);
+        node *balance(node *);
 
-        avl *insert(avl *, string);
-        avl *search(string);
-        avl *deletek(avl *, string);
-        void preorder(avl *);
-        void inorder(avl *);
-        void postorder(avl *);
+        node *insert(node *, string);
+        node *search(string);
+        node *deletek(node *, string);
+        void preorder(node *);
+        void inorder(node *);
+        void postorder(node *);
     public:
         AVLTree();
         void insert(string s) {

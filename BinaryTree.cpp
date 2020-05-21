@@ -1,18 +1,9 @@
 #include "BinaryTree.h"
 
-BinaryTree::BinaryTree()
-{
-    //ctor
-    root = nullptr;
-}
+BinaryTree::BinaryTree() { root = nullptr; }
 
-BinaryTree::~BinaryTree()
-{
-    //dtor
-}
-
-node *BinaryTree::search(string k){
-    node *leaf = new node;
+node *BinaryTree::search(const string& k){
+    node *leaf = new node(k);
     leaf = root;
     while(leaf){
         if(leaf->value.compare(k) < 0)
@@ -25,13 +16,13 @@ node *BinaryTree::search(string k){
     return leaf;
 }
 
-void BinaryTree::insert(string k){
-    node *leaf = new node;
-    leaf->value = k;
+void BinaryTree::insert(const string& k){
+    node *leaf = new node(k);
     if(root == nullptr){
         root = leaf;
     }else{
         node* leaf2 = root;
+        leaf2->count = 1;
         while(leaf2 != nullptr){
             //left leaf
             if(leaf->value.compare(leaf2->value) < 0){
@@ -50,6 +41,7 @@ void BinaryTree::insert(string k){
                 }
                 leaf2 = leaf2->right;
             }else{
+                leaf2->count++;
                 delete leaf;
                 break;
             }
@@ -57,37 +49,41 @@ void BinaryTree::insert(string k){
     }
 }
 
-void BinaryTree::deletek(string k){
-    node *leaf = new node;
+void BinaryTree::deletek(const string& k){
+    node *leaf = new node(k);
     leaf = search(k);
     if(leaf == nullptr)
         return;
     else{
-        if(leaf->left && leaf->right){
-            node *t = leaf->left;
-            node *tpar = leaf;
-            while(t->right){
-                tpar = t;
-                t = t->right;
+        if(leaf->count == 1) {
+            if (leaf->left && leaf->right) {
+                node *t = leaf->left;
+                node *tpar = leaf;
+                while (t->right) {
+                    tpar = t;
+                    t = t->right;
+                }
+                leaf->value = t->value;
+                leaf = t;
+                leaf->parent = tpar;
             }
-            leaf->value = t->value;
-            leaf = t;
-            leaf->parent = tpar;
-        }
-        node *temp;
-        if(leaf->left)
-            temp = leaf->left;
-        else
-            temp = leaf->right;
-        if(leaf == root)
-            root = temp;
-        else{
-            if(leaf == (leaf->parent)->left)
-                (leaf->parent)->left = temp;
+            node *temp;
+            if (leaf->left)
+                temp = leaf->left;
             else
-                (leaf->parent)->right = temp;
+                temp = leaf->right;
+            if (leaf == root)
+                root = temp;
+            else {
+                if (leaf == (leaf->parent)->left)
+                    (leaf->parent)->left = temp;
+                else
+                    (leaf->parent)->right = temp;
+            }
+            delete leaf;
+        }else {
+            leaf->count--;
         }
-        delete leaf;
     }
 }
 
@@ -95,7 +91,7 @@ void BinaryTree::preorder(node *leaf){
     if(leaf == nullptr){
         return;
     }
-    printf("%s \n", leaf->value.c_str());
+    printf("%s Counted:%d\n", leaf->value.c_str(), leaf->count);
     preorder(leaf->left);
     preorder(leaf->right);
 }
@@ -105,7 +101,7 @@ void BinaryTree::inorder(node *leaf){
             return;
      }
      inorder(leaf->left);
-     printf("%s \n", leaf->value.c_str());
+     printf("%s Counted:%d\n", leaf->value.c_str(), leaf->count);
      inorder(leaf->right);
 }
 
@@ -115,5 +111,5 @@ void BinaryTree::postorder(node *leaf){
     }
     postorder(leaf->left);
     postorder(leaf->right);
-    printf("%s \n", leaf->value.c_str());
+    printf("%s Counted:%d\n", leaf->value.c_str(), leaf->count);
 }
