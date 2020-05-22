@@ -1,6 +1,7 @@
 #include <iostream>
 #include "BinaryTree.h"
 #include "AVLTree.h"
+#include "HashTable.h"
 
 using namespace std;
 
@@ -41,6 +42,22 @@ int main(){
     cout<<endl;
     b.deletek("apple");
     b.inorder();
+    cout<<endl;
+
+    //AVLTree
+    HashTable c;
+
+    cout<< "HashTable" <<endl;
+    cout<< "------------------------------" <<endl;
+    c.insert("hello");
+    c.insert("cat");
+    c.insert("apple");
+    c.insert("apple");
+    c.insert("apple");
+    c.insert("apple");
+    c.print("apple");
+    c.print("cat");
+    c.print("hello");
     cout<<endl;
     return 0;
 }
