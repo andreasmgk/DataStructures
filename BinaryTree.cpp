@@ -22,13 +22,13 @@ void BinaryTree::insert(const string& k){
         root = leaf;
     }else{
         node* leaf2 = root;
-        leaf2->count = 1;
         while(leaf2 != nullptr){
             //left leaf
             if(leaf->value.compare(leaf2->value) < 0){
                 if(leaf2->left == nullptr){
                     leaf2->left = leaf;
                     leaf->parent = leaf2;
+                    leaf2->count = 1;
                     break;
                 }
                 leaf2 = leaf2->left;
@@ -37,6 +37,7 @@ void BinaryTree::insert(const string& k){
                 if(leaf2->right == nullptr){
                     leaf2->right = leaf;
                     leaf->parent = leaf2;
+                    leaf2->count = 1;
                     break;
                 }
                 leaf2 = leaf2->right;
