@@ -7,7 +7,7 @@
 1588780894 c:\users\andre\codeblocksprojects\datastructures\binarytree2.h
 	<iostream>
 
-1590194699 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
+1590244948 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
 	<iostream>
 	"BinaryTree.h"
 	"AVLTree.h"
@@ -21,7 +21,7 @@
 1590192537 source:c:\users\andre\codeblocksprojects\datastructures\binarytree.cpp
 	"BinaryTree.h"
 
-1590194665 source:c:\users\andre\codeblocksprojects\datastructures\avltree.cpp
+1590244923 source:c:\users\andre\codeblocksprojects\datastructures\avltree.cpp
 	"AVLTree.h"
 	<iostream>
 	<cmath>
@@ -35,11 +35,14 @@
 	<iostream>
 	<string>
 
-1590189426 c:\users\andre\codeblocksprojects\datastructures\hashtable.h
+1590244923 c:\users\andre\codeblocksprojects\datastructures\hashtable.h
 	<iostream>
 	<string>
 
 1590188034 source:c:\users\andre\codeblocksprojects\datastructures\node.cpp
 	<iostream>
 	<string>
+
+1590244948 source:c:\users\andre\codeblocksprojects\datastructures\hashtable.cpp
+	"HashTable.h"
 

@@ -36,13 +36,10 @@
 		<Unit filename="AVLTree.h" />
 		<Unit filename="BinaryTree.cpp" />
 		<Unit filename="BinaryTree.h" />
+		<Unit filename="HashTable.cpp" />
 		<Unit filename="HashTable.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="node.cpp" />
-		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
