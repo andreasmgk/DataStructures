@@ -1,30 +1,38 @@
 #include "HashTable.h"
 
 HashTable::HashTable() {
-    tab_len = 1;
+    tab_len = 100000;
+    insert_it = 0;
     table = new Cell[tab_len];
     table[0].word = "";
     table[0].count = 1;
 }
 
 Cell *HashTable::growTable() {
-    Cell *temp = new Cell[tab_len + 1];
+    Cell *temp = new Cell[tab_len + 100000];
     copy(table, table + tab_len, temp);
     table = temp;
-    tab_len++;
-    return &table[tab_len - 1];
+    tab_len += 100000;
+    return &table[tab_len - 100000];
 }
 
 void HashTable::insert(const string& value) {
     if(table[0].word == "") {
         table[0].word = value;
         table[0].count = 1;
+        insert_it++;
     }else {
         Cell *existing = search(value);
         if(existing == nullptr) {
-            Cell *ncell = growTable();
+            Cell *ncell;
+            if(insert_it == tab_len - 1) {
+                Cell *ncell = growTable();
+            }else {
+                ncell = &table[insert_it];
+            }
             ncell->word = value;
             ncell->count = 1;
+            insert_it++;
         }else {
             existing->count++;
         }
