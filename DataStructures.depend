@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589403050 source:c:\users\andre\codeblocksprojects\datastructures\binarytree2.cpp
+1589404774 source:c:\users\andre\codeblocksprojects\datastructures\binarytree2.cpp
 	"BinaryTree2.h"
 	<iostream>
 	<cmath>
@@ -7,14 +7,39 @@
 1588780894 c:\users\andre\codeblocksprojects\datastructures\binarytree2.h
 	<iostream>
 
-1589403491 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
+1590194699 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
 	<iostream>
 	"BinaryTree.h"
-	"BinaryTree2.h"
+	"AVLTree.h"
+	"HashTable.h"
 
-1586905599 c:\users\andre\codeblocksprojects\datastructures\binarytree.h
+1590192032 c:\users\andre\codeblocksprojects\datastructures\binarytree.h
 	<iostream>
+	<string>
+	"node.cpp"
 
-1586905599 source:c:\users\andre\codeblocksprojects\datastructures\binarytree.cpp
+1590192537 source:c:\users\andre\codeblocksprojects\datastructures\binarytree.cpp
 	"BinaryTree.h"
+
+1590194665 source:c:\users\andre\codeblocksprojects\datastructures\avltree.cpp
+	"AVLTree.h"
+	<iostream>
+	<cmath>
+
+1590193216 c:\users\andre\codeblocksprojects\datastructures\avltree.h
+	<iostream>
+	<string>
+	"node.cpp"
+
+1590188034 c:\users\andre\codeblocksprojects\datastructures\node.cpp
+	<iostream>
+	<string>
+
+1590189426 c:\users\andre\codeblocksprojects\datastructures\hashtable.h
+	<iostream>
+	<string>
+
+1590188034 source:c:\users\andre\codeblocksprojects\datastructures\node.cpp
+	<iostream>
+	<string>
 

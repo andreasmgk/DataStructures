@@ -32,11 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="AVLTree.cpp" />
+		<Unit filename="AVLTree.h" />
 		<Unit filename="BinaryTree.cpp" />
 		<Unit filename="BinaryTree.h" />
-		<Unit filename="BinaryTree2.cpp" />
-		<Unit filename="BinaryTree2.h" />
+		<Unit filename="HashTable.h" />
 		<Unit filename="main.cpp" />
-		<Extensions />
+		<Unit filename="node.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
