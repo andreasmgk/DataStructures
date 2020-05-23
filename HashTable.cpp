@@ -1,13 +1,9 @@
 #include "HashTable.h"
 
 HashTable::HashTable() {
-<<<<<<< Updated upstream
-    tab_len = 1;
-=======
     tab_len = 50000017;
     inserts = 0;
     R = tab_len / 2;
->>>>>>> Stashed changes
     table = new Cell[tab_len];
     for(int i = 0; i < tab_len; i++){
         table[i].word = "";
@@ -15,28 +11,6 @@ HashTable::HashTable() {
     }
 }
 
-<<<<<<< Updated upstream
-Cell *HashTable::growTable() {
-    Cell *temp = new Cell[tab_len + 1];
-    copy(table, table + tab_len, temp);
-    table = temp;
-    tab_len++;
-    return &table[tab_len - 1];
-}
-
-void HashTable::insert(const string& value) {
-    if(table[0].word == "") {
-        table[0].word = value;
-        table[0].count = 1;
-    }else {
-        Cell *existing = search(value);
-        if(existing == nullptr) {
-            Cell *ncell = growTable();
-            ncell->word = value;
-            ncell->count = 1;
-        }else {
-            existing->count++;
-=======
 int HashTable::h(Cell *matrix, const string& key, int k){
     int hashVal = 0;
 
@@ -96,7 +70,6 @@ void HashTable::insert(const string& value) {
         }else if(hasher < 0 && table[hasher * (-1)].word == value){
             table[hasher * (-1)].count++;
             break;
->>>>>>> Stashed changes
         }
     }
 }

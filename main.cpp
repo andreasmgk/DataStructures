@@ -1,8 +1,8 @@
 #include <iostream>
+#include <chrono>
 #include "BinaryTree.h"
 #include "AVLTree.h"
 #include "HashTable.h"
-#include <chrono>
 
 using namespace std;
 using namespace std::chrono;
