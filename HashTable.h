@@ -14,10 +14,16 @@ class HashTable
 {
 private:
     Cell *table;
-    Cell *growTable();
+    void growTable();
     int tab_len;
+<<<<<<< Updated upstream
+=======
+    int R;
+    int inserts;
+>>>>>>> Stashed changes
 public:
     HashTable();
+    int h(Cell *,const string&, int);
     void insert(const string&);
     Cell *search(const string&);
     void print(const string&);
