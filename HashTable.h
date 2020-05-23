@@ -16,6 +16,7 @@ private:
     Cell *table;
     Cell *growTable();
     int tab_len;
+    int insert_it;
 public:
     HashTable();
     void insert(const string&);
