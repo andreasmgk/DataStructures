@@ -3,6 +3,9 @@
 #include "BinaryTree.h"
 #include "AVLTree.h"
 #include "HashTable.h"
+#define Binary 1000000
+#define AVL 1000000
+#define Hash_Table 1000000000
 
 using namespace std;
 using namespace std::chrono;
@@ -17,7 +20,7 @@ int main(){
     cout<< "BinaryTree" <<endl;
     cout<< "------------------------------" <<endl;
     auto start = high_resolution_clock::now();
-    for(int i = 0; i<1000000;i++)
+    for(int i = 0; i < Binary; i++)
         a.insert(h[i % 5]);
     a.preorder();
     cout<<endl;
@@ -25,7 +28,7 @@ int main(){
     cout<<endl;
     a.postorder();
     cout<<endl;
-    for(int i = 0; i<1000000; i++)
+    for(int i = 0; i < Binary; i++)
         a.deletek(h[i % 4]);
     a.preorder();
     cout<<endl;
@@ -44,7 +47,7 @@ int main(){
     cout<< "AVLTree" <<endl;
     cout<< "------------------------------" <<endl;
     start = high_resolution_clock::now();
-    for(int i = 0; i<1000000;i++)
+    for(int i = 0; i < AVL; i++)
         b.insert(h[i % 5]);
     b.preorder();
     cout<<endl;
@@ -52,7 +55,7 @@ int main(){
     cout<<endl;
     b.postorder();
     cout<<endl;
-    for(int i = 0; i<1000000; i++)
+    for(int i = 0; i < AVL; i++)
         b.deletek(h[i % 4]);
     b.preorder();
     cout<<endl;
@@ -71,7 +74,7 @@ int main(){
     cout<< "HashTable" <<endl;
     cout<< "------------------------------" <<endl;
     start = high_resolution_clock::now();
-    for(int i = 0; i<1000000;i++)
+    for(int i = 0; i < Hash_Table; i++)
         c.insert(h[i % 5]);
     c.print("a");
     c.print("b");

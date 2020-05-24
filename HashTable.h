@@ -18,6 +18,8 @@ private:
     int tab_len;
     int R;
     int inserts;
+    int *hashers;
+    int hashers_size;
 public:
     HashTable();
     int h(Cell *,const string&, int);
