@@ -25,6 +25,7 @@ class AVLTree
         void postorder(node *);
     public:
         AVLTree();
+        ~AVLTree();
         void insert(string s) {
             root = insert(root, s);
         }

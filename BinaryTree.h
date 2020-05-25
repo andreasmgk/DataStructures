@@ -15,6 +15,7 @@ class BinaryTree
         void postorder(node *);
     public:
         BinaryTree();
+        ~BinaryTree();
 
         node *search(const string&);
         void insert(const string&);

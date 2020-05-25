@@ -22,6 +22,7 @@ private:
     int hashers_size;
 public:
     HashTable();
+    ~HashTable();
     int h(Cell *,const string&, int);
     void insert(const string&);
     Cell *search(const string&);

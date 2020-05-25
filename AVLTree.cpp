@@ -8,6 +8,8 @@ AVLTree::AVLTree(){
     root = nullptr;
 }
 
+AVLTree::~AVLTree(){}
+
 int AVLTree::height(node *t){
     int h = 0;
     if(t != nullptr){

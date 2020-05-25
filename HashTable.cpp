@@ -1,14 +1,21 @@
 #include "HashTable.h"
 
 HashTable::HashTable() {
-    tab_len = 50000017;
+    tab_len = 10000019;
+    hashers_size = tab_len;
     inserts = 0;
     R = tab_len / 2;
     table = new Cell[tab_len];
+    hashers = new int[hashers_size];
     for(int i = 0; i < tab_len; i++){
         table[i].word = "";
         table[i].count = 0;
     }
+}
+
+HashTable::~HashTable(){
+    delete[] table;
+    delete[] hashers;
 }
 
 int HashTable::h(Cell *matrix, const string& key, int k){

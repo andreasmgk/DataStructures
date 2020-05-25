@@ -2,6 +2,8 @@
 
 BinaryTree::BinaryTree() { root = nullptr; }
 
+BinaryTree::~BinaryTree(){}
+
 node *BinaryTree::search(const string& k){
     node *leaf = new node(k);
     leaf = root;
