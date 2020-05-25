@@ -3,9 +3,9 @@
 #include "BinaryTree.h"
 #include "AVLTree.h"
 #include "HashTable.h"
-#define Binary 1000000
-#define AVL 1000000
-#define Hash_Table 1000000000
+#define Binary 100000000
+#define AVL 100000000
+#define Hash_Table 10
 
 using namespace std;
 using namespace std::chrono;
@@ -69,7 +69,7 @@ int main(){
     float avl = duration.count();
 
     //AVLTree
-    HashTable c;
+    /*HashTable c;
 
     cout<< "HashTable" <<endl;
     cout<< "------------------------------" <<endl;
@@ -85,11 +85,11 @@ int main(){
     stop = high_resolution_clock::now();
 
     duration = duration_cast<milliseconds>(stop - start);
-    float hashtable = duration.count();
+    float hashtable = duration.count();*/
 
     cout<<"Binary Tree: "<<tree<<" millisec"<<endl;
     cout<<"AVL Tree: "<<avl<<" millisec"<<endl;
-    cout<<"HashTable: "<<hashtable<<" millisec"<<endl;
+    //cout<<"HashTable: "<<hashtable<<" millisec"<<endl;
 
     return 0;
 }

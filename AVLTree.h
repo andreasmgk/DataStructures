@@ -19,7 +19,7 @@ class AVLTree
 
         node *insert(node *, string);
         node *search(string);
-        node *deletek(node *, string);
+        node *deletek(node *, string, bool);
         void preorder(node *);
         void inorder(node *);
         void postorder(node *);
@@ -29,7 +29,7 @@ class AVLTree
             root = insert(root, s);
         }
         void deletek(string s) {
-            root = deletek(root, s);
+            root = deletek(root, s, false);
         }
         void preorder(){
             preorder(root);

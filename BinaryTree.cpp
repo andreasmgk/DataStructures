@@ -50,42 +50,44 @@ void BinaryTree::insert(const string& k){
     }
 }
 
-void BinaryTree::deletek(const string& k){
-    node *leaf = new node(k);
-    leaf = search(k);
-    if(leaf == nullptr)
-        return;
+node *BinaryTree::deletek(node *root, string s, bool flag){
+    if(root == nullptr)
+        return root;
+    if(s < root->value)
+        root->left = deletek(root->left, s, flag);
+    else if(s > root->value)
+        root->right = deletek(root->right, s, flag);
     else{
-        if(leaf->count == 1) {
-            if (leaf->left && leaf->right) {
-                node *t = leaf->left;
-                node *tpar = leaf;
-                while (t->right) {
-                    tpar = t;
-                    t = t->right;
-                }
-                leaf->value = t->value;
-                leaf = t;
-                leaf->parent = tpar;
+        if(root->count == 1 || flag){
+            if(root->left == nullptr){
+                node *temp = root->right;
+                /*if(root == (root->parent)->right)
+                    (root->parent)->right = temp;
+                else if(root == (root->parent)->left)
+                    (root->parent)->left = temp;*/
+                delete root;
+                return temp;
+            }else if(root->right == nullptr){
+                node *temp = root->left;
+                /*if(root == (root->parent)->right)
+                    (root->parent)->right = temp;
+                else if(root == (root->parent)->left)
+                    (root->parent)->left = temp;*/
+                delete root;
+                return temp;
             }
-            node *temp;
-            if (leaf->left)
-                temp = leaf->left;
-            else
-                temp = leaf->right;
-            if (leaf == root)
-                root = temp;
-            else {
-                if (leaf == (leaf->parent)->left)
-                    (leaf->parent)->left = temp;
-                else
-                    (leaf->parent)->right = temp;
-            }
-            delete leaf;
-        }else {
-            leaf->count--;
+            node *temp = root->right;
+            while(temp && temp->left != nullptr)
+                temp = temp->left;
+            root->value = temp->value;
+            root->count = temp->count;
+            flag = true;
+            root->right = deletek(root->right, temp->value, flag);
+        }else if(root->count > 1){
+            root->count--;
         }
     }
+    return root;
 }
 
 void BinaryTree::preorder(node *leaf){

@@ -101,17 +101,22 @@ node *AVLTree::search(string k){
     return leaf;
 }
 
-node *AVLTree::deletek(node *r, string k){
+node *AVLTree::deletek(node *r, string k, bool flag){
     if(r == nullptr)
         return r;
     if(r->value.compare(k) > 0)
-        r->left = deletek(r->left, k);
+        r->left = deletek(r->left, k, flag);
     else if(r->value.compare(k) < 0)
-        r->right = deletek(r->right, k);
+        r->right = deletek(r->right, k, flag);
     else{
-        if(r->count == 1) {
+        if(r->count == 1 || flag) {
             if (r->left == nullptr || r->right == nullptr) {
                 node *temp = r->left ? r->left : r->right;
+
+                /*if(r == (r->parent)->right)
+                    (r->parent)->right = temp;
+                else if(r == (r->parent)->left)
+                    (r->parent)->left = temp;*/
 
                 if (temp == nullptr) {
                     temp = r;
@@ -120,14 +125,15 @@ node *AVLTree::deletek(node *r, string k){
                     *r = *temp;
                 delete temp;
             } else {
-                node *current = r->right;
-                while (current->left != nullptr)
-                    current = current->left;
-                node *temp = current;
+                node *temp = r->right;
+                while (temp && temp->left != nullptr)
+                    temp = temp->left;
                 r->value = temp->value;
-                r->right = deletek(r->right, temp->value);
+                r->count = temp->count;
+                flag = true;
+                r->right = deletek(r->right, temp->value, flag);
             }
-        }else {
+        }else if(r->count > 1){
             r->count--;
         }
     }
