@@ -90,9 +90,11 @@ node *AVLTree::insert(node *r, string v){
     return r;
 }
 
-node *AVLTree::search(string k){
+node *AVLTree::searchk(string k){
     node *leaf = root;
     while(leaf){
+        if(leaf == nullptr)
+            break;
         if(leaf->value.compare(k) < 0)
             leaf = leaf->right;
         else if(leaf->value.compare(k) > 0)
