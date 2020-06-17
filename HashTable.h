@@ -23,7 +23,7 @@ private:
 public:
     HashTable();
     ~HashTable();
-    int h(Cell *,const string&, int);
+    long long h(Cell *,const string&, int);
     void insert(const string&);
     Cell *search(const string&);
     void print(const string&);

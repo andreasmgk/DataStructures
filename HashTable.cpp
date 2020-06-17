@@ -2,6 +2,7 @@
 
 HashTable::HashTable() {
     tab_len = 10000019;
+    //tab_len = 500000;
     hashers_size = tab_len;
     inserts = 0;
     R = tab_len / 2;
@@ -18,13 +19,16 @@ HashTable::~HashTable(){
     delete[] hashers;
 }
 
-int HashTable::h(Cell *matrix, const string& key, int k){
-    int hashVal = 0;
+long long HashTable::h(Cell *matrix, const string& key, int k){
+    long long hashVal = 0;
 
     for(int i = 0; i < key.length(); i++)
         hashVal = 37 * hashVal + int(key[i]);
+    long long hashVal_2 = hashVal % tab_len;
+    if(hashVal_2 < 0)
+        hashVal_2 += tab_len;
 
-    int func = (hashVal % tab_len + k * (R -(hashVal % R))) % tab_len;
+    long long func = (hashVal_2 + k * (R -(hashVal % R))) % tab_len;
     if(matrix[func].word == "")
         return func;
     else

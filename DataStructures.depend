@@ -7,27 +7,29 @@
 1588780894 c:\users\andre\codeblocksprojects\datastructures\binarytree2.h
 	<iostream>
 
-1590514841 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
+1592408499 source:c:\users\andre\codeblocksprojects\datastructures\main.cpp
 	<iostream>
+	<fstream>
+	<sstream>
 	<chrono>
 	"BinaryTree.h"
 	"AVLTree.h"
 	"HashTable.h"
 
-1590439787 c:\users\andre\codeblocksprojects\datastructures\binarytree.h
+1590518928 c:\users\andre\codeblocksprojects\datastructures\binarytree.h
 	<iostream>
 	<string>
 	"node.cpp"
 
-1590516489 source:c:\users\andre\codeblocksprojects\datastructures\binarytree.cpp
+1590518883 source:c:\users\andre\codeblocksprojects\datastructures\binarytree.cpp
 	"BinaryTree.h"
 
-1590439787 source:c:\users\andre\codeblocksprojects\datastructures\avltree.cpp
+1592405600 source:c:\users\andre\codeblocksprojects\datastructures\avltree.cpp
 	"AVLTree.h"
 	<iostream>
 	<cmath>
 
-1590439787 c:\users\andre\codeblocksprojects\datastructures\avltree.h
+1592405063 c:\users\andre\codeblocksprojects\datastructures\avltree.h
 	<iostream>
 	<string>
 	"node.cpp"
@@ -36,7 +38,7 @@
 	<iostream>
 	<string>
 
-1590439244 c:\users\andre\codeblocksprojects\datastructures\hashtable.h
+1592408872 c:\users\andre\codeblocksprojects\datastructures\hashtable.h
 	<iostream>
 	<string>
 
@@ -44,6 +46,6 @@
 	<iostream>
 	<string>
 
-1590443398 source:c:\users\andre\codeblocksprojects\datastructures\hashtable.cpp
+1592408287 source:c:\users\andre\codeblocksprojects\datastructures\hashtable.cpp
 	"HashTable.h"
 
