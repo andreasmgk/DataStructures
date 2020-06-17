@@ -39,16 +39,34 @@ int main(){
     cout<< "AVLTree" <<endl;
     cout<< "------------------------------" <<endl;
     start = high_resolution_clock::now();
-    for(int i = 0; i < AVL; i++)
-        b.insert(h[i % 5]);
+    //for(int i = 0; i < AVL; i++)
+      //  b.insert(h[i % 5]);
+    for(int i = 0; i < Binary; i++)
+        b.insert("d");
+    for(int i = 0; i < Binary; i++)
+        b.insert("a");
+    for(int i = 0; i < Binary; i++)
+        b.insert("b");
+    for(int i = 0; i < Binary; i++)
+        b.insert("c");
+    for(int i = 0; i < Binary; i++)
+        b.insert("e");
     b.preorder();
     cout<<endl;
     b.inorder();
     cout<<endl;
     b.postorder();
     cout<<endl;
-    for(int i = 0; i < AVL; i++)
-        b.deletek(h[i % 4]);
+    //for(int i = 0; i < AVL; i++)
+      //  b.deletek(h[i % 4]);
+    for(int i = 0; i < Binary; i++)
+        b.deletek("d");
+    for(int i = 0; i < Binary; i++)
+        b.deletek("a");
+    for(int i = 0; i < Binary; i++)
+        b.deletek("b");
+    for(int i = 0; i < Binary; i++)
+        b.deletek("c");
     b.preorder();
     cout<<endl;
     b.inorder();
@@ -66,16 +84,34 @@ int main(){
     cout<< "BinaryTree" <<endl;
     cout<< "------------------------------" <<endl;
     start = high_resolution_clock::now();
+    //for(int i = 0; i < Binary; i++)
+      //  a.insert(h[i % 5]);
     for(int i = 0; i < Binary; i++)
-        a.insert(h[i % 5]);
+        a.insert("d");
+    for(int i = 0; i < Binary; i++)
+        a.insert("a");
+    for(int i = 0; i < Binary; i++)
+        a.insert("b");
+    for(int i = 0; i < Binary; i++)
+        a.insert("c");
+    for(int i = 0; i < Binary; i++)
+        a.insert("e");
     a.preorder();
     cout<<endl;
     a.inorder();
     cout<<endl;
     a.postorder();
     cout<<endl;
+    //for(int i = 0; i < Binary; i++)
+      //  a.deletek(h[i % 4]);
     for(int i = 0; i < Binary; i++)
-        a.deletek(h[i % 4]);
+        a.deletek("d");
+    for(int i = 0; i < Binary; i++)
+        a.deletek("a");
+    for(int i = 0; i < Binary; i++)
+        a.deletek("b");
+    for(int i = 0; i < Binary; i++)
+        a.deletek("c");
     a.preorder();
     cout<<endl;
     a.inorder();
