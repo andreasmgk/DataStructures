@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <chrono>
 #include "BinaryTree.h"
 #include "AVLTree.h"
@@ -10,8 +12,7 @@
 using namespace std;
 using namespace std::chrono;
 
-int main(){
-
+void performance() {
     string h[5] = {"d", "a", "b", "c", "e"};
 
     //HashTable c
@@ -126,6 +127,24 @@ int main(){
     cout<<"HashTable: "<<hashtable<<" millisec"<<endl;
     cout<<"AVL Tree: "<<avl<<" millisec"<<endl;
     cout<<"Binary Tree: "<<tree<<" millisec"<<endl;
+}
 
+int main(){
+    BinaryTree a;
+    AVLTree b;
+    HashTable c;
+
+    ifstream file("small-file.txt");
+    string linestr;
+    while (std::getline(file, linestr)) {
+        stringstream ss(linestr);
+        string word;
+        while (ss >> word) {
+            a.insert(word);
+            b.insert(word);
+            c.insert(word);
+        }
+//        b.search("the");
+    }
     return 0;
 }

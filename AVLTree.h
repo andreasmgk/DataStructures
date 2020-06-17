@@ -18,7 +18,7 @@ class AVLTree
         node *balance(node *);
 
         node *insert(node *, string);
-        node *search(string);
+        node *searchk(string);
         node *deletek(node *, string, bool);
         void preorder(node *);
         void inorder(node *);
@@ -40,5 +40,14 @@ class AVLTree
         }
         void postorder(){
             postorder(root);
+        }
+        void search(string s) {
+            node *temp;
+            temp = searchk(s);
+            if(temp == nullptr) {
+                cout << s << ": 0" << endl;
+            }else {
+                cout << s << ": " << temp->count << endl;
+            }
         }
 };
