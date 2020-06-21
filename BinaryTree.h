@@ -26,7 +26,7 @@ class BinaryTree
 
         void insert(const string&);
 
-        //Below functions overload the same as the above ones, but handles the root argument
+        //Below functions overload the same as the above ones, but handle the root argument
         void deletek(string s){
             root = deletek(root, s, false);
         }
@@ -40,7 +40,7 @@ class BinaryTree
             postorder(root);
         }
 
-        //Finds the word counted inside the structure, else print O
+        //Finds the word counted inside the structure, else prints O
         void search(string s) {
             node *temp;
             temp = searchk(s);

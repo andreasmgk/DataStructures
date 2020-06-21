@@ -42,7 +42,7 @@ class AVLTree
         AVLTree();
         ~AVLTree();
 
-        //Below functions overload the same as the above ones, but handles the root argument
+        //Below functions overload the same as the above ones, but handle the root argument
         void insert(string s) {
             root = insert(root, s);
         }
@@ -59,7 +59,7 @@ class AVLTree
             postorder(root);
         }
 
-        //Finds the word counted inside the structure, else print O
+        //Finds the word counted inside the structure, else prints O
         void search(string s) {
             node *temp;
             temp = searchk(s);

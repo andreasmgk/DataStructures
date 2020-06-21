@@ -60,9 +60,9 @@ int main(){
         a.search(Q[i]);
     }
     auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(stop - start);
-    cout << "Total running time: " << duration.count() << endl;
-    cout << "------------------------" << endl;
+    auto duration_b = duration_cast<milliseconds>(stop - start);
+    cout << "------------------------" << endl<<endl<<endl;
+
 
     cout << "AVLTree" << endl;
     cout << "------------------------" << endl;
@@ -71,9 +71,9 @@ int main(){
         b.search(Q[i]);
     }
     stop = high_resolution_clock::now();
-    duration = duration_cast<milliseconds>(stop - start);
-    cout << "Total running time: " << duration.count() << endl;
-    cout << "------------------------" << endl;
+    auto duration_avl = duration_cast<milliseconds>(stop - start);
+    cout << "------------------------" << endl<<endl<<endl;
+
 
     cout << "HashTable" << endl;
     cout << "------------------------" << endl;
@@ -82,8 +82,12 @@ int main(){
         c.search(Q[i]);
     }
     stop = high_resolution_clock::now();
-    duration = duration_cast<milliseconds>(stop - start);
-    cout << "Total running time: " << duration.count() << endl;
+    auto duration_hash = duration_cast<milliseconds>(stop - start);
     cout << "------------------------" << endl;
+
+
+    cout << "Total running time of Binary Tree: " << duration_b.count() <<" milliseconds"<< endl;
+    cout << "Total running time of AVL Tree: " << duration_avl.count() <<" milliseconds"<< endl;
+    cout << "Total running time of Hash Table: " << duration_hash.count() <<" milliseconds"<< endl;
     return 0;
 }
