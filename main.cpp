@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <fstream>
 #include <sstream>
 #include <chrono>
@@ -134,6 +135,9 @@ int main(){
     AVLTree b;
     HashTable c;
 
+    string Q[1000];
+    int qcounter = 0;
+
     ifstream file("small-file.txt");
     string linestr;
     while (std::getline(file, linestr)) {
@@ -144,7 +148,31 @@ int main(){
             b.insert(word);
             c.insert(word);
         }
-//        b.search("the");
+    }
+    file.close();
+    bool flag;
+    while(qcounter < 1000) {
+        file.open("small-file.txt");
+        while (std::getline(file, linestr) && !flag) {
+            stringstream ss(linestr);
+            string word;
+            while (ss >> word && !flag) {
+                if(qcounter == 1000) {
+                    flag = true;
+                } else {
+                    if ((rand() % 2) == 1) {
+                        Q[qcounter] = word;
+                        qcounter++;
+                    }
+                }
+            }
+        }
+        file.close();
+    }
+    for(int i = 0; i < 1000; i++) {
+        a.search(Q[i]);
+        b.search(Q[i]);
+        c.search(Q[i]);
     }
     return 0;
 }

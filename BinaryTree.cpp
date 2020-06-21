@@ -8,13 +8,13 @@ BinaryTree::BinaryTree() { root = nullptr; }
 BinaryTree::~BinaryTree(){}
 
 // Return the node with value k
-node *BinaryTree::search(const string& k){
+node *BinaryTree::searchk(const string& k){
 
     // Create a new node with value k
-    // to be searched
+    // to be searchked
     node *leaf = new node(k);
 
-    // Start the search from the root
+    // Start the searchk from the root
     leaf = root;
 
     // Traverse the tree until you find the node or reach a nullpointer
@@ -51,7 +51,7 @@ void BinaryTree::insert(const string& k){
         // find the node already exists
         while(leaf2 != nullptr){
 
-            // Search the left leaf
+            // searchk the left leaf
             if(leaf->value.compare(leaf2->value) < 0){
 
                 // If you find the right spot insert the node
@@ -65,7 +65,7 @@ void BinaryTree::insert(const string& k){
                 // Else continue with the left subtree
                 leaf2 = leaf2->left;
 
-            // Search the right leaf
+            // searchk the right leaf
             }else if(leaf->value.compare(leaf2->value) > 0){
 
                 // If you find the right spot insert the node

@@ -99,7 +99,7 @@ void HashTable::insert(const string& value) {
     }
 }
 
-Cell *HashTable::search(const string& value) {
+Cell *HashTable::searchk(const string& value) {
     for(int i = 0; i < inserts; i++){
         if(table[hashers[i]].word == value)
             return &table[hashers[i]];
@@ -108,7 +108,7 @@ Cell *HashTable::search(const string& value) {
 }
 
 void HashTable::print(const string& value) {
-    Cell *temp = search(value);
+    Cell *temp = searchk(value);
     if(temp != nullptr) {
         cout<< temp->word << " Counted: " << temp->count << endl;
     }
