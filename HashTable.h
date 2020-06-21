@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//The structure where both word and the counter is stored
 struct Cell {
     int count;
     string word;
@@ -13,10 +14,14 @@ struct Cell {
 class HashTable
 {
 private:
+    //Array of the Cell(s) inside the structure
     Cell *table;
+    //Increases table size
     void growTable();
+    //Length of table
     int tab_len;
     int R;
+    //Finds a node with passed value, else null
     Cell *searchk(const string&);
     int inserts;
     int *hashers;
