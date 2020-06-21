@@ -25,7 +25,7 @@
 1592731344 source:c:\users\andre\codeblocksprojects\datastructures\binarytree.cpp
 	"BinaryTree.h"
 
-1592405600 source:c:\users\andre\codeblocksprojects\datastructures\avltree.cpp
+1592762062 source:c:\users\andre\codeblocksprojects\datastructures\avltree.cpp
 	"AVLTree.h"
 	<iostream>
 	<cmath>
